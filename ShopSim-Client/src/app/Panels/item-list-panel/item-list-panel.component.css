@@ -1,0 +1,21 @@
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+  border-width:40px !important;
+  height: 220px;
+}
+
+img {
+  
+  height: 100%;
+  margin: auto;
+  width: auto;
+  display: block;
+}
+.imageSquareWrapper {
+  height: 180px;
+  width: 300px;
+}
+
+
+

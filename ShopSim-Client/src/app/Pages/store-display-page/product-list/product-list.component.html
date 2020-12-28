@@ -1,0 +1,20 @@
+<div class="card border-dark filters">
+    <div class="card-header border-dark">
+        <h2>Search Store Items</h2>
+        <form #filterForm novalidate>
+            <div class="input-group filters">
+                <input name="filterTerm" #filterTerm type="text" placeholder="Keyword Search.." class="form-control" style="width: 200px;"
+                    [(ngModel)]="filterTerms" required />
+                <button class="btn btn-primary" style="margin-left: 10px;" (click)="onSearchClick()">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="card-body-dark">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let item of items">
+                <app-item-panel [item]=item></app-item-panel>
+            </div>
+        </div>
+    </div>
+</div>

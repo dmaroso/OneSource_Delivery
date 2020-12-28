@@ -1,0 +1,7 @@
+<h2>Orders</h2>
+<div class="itemPanel" *ngIf="orders && stores">
+    <div class = "orderWrapper" *ngFor="let o of orders">
+        <app-order-panel [order] = o [store] = stores.get(o.storeId)></app-order-panel>
+    </div>
+  </div>
+

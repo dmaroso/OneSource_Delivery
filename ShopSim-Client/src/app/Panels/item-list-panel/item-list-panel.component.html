@@ -1,0 +1,23 @@
+<div *ngIf="item; else no_item"> 
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3">
+            <div class="card shadow p-3 mb-5 bg-white rounded" >
+                <div class="card-horizontal">
+                  <div class="imageSquareWrapper">
+                        <img src="{{item.url}}" alt="Card image cap">
+                  </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{item.description}}</h4>
+                        <h5>Price: ${{item.price}} Quantity: {{itemList.quantity}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+  <ng-template #no_item>
+    <!-- <div>Product ID: {{itemList?.itemId?.productId}} Quantity: {{itemList?.quantity}}</div> -->
+  </ng-template>
+

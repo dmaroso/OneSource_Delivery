@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+.mainContent {
+  margin:0;
+ 
+  padding-top: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 100% ;
+  background-color: #B2D9EA;
+}
+.bgcolor {
+  background-color: #B2D9EA;
+}
+
+html {
+  background-color: #B2D9EA !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* Added Styling */
+.cart-item {
+  font-size: small;
+}
+
+.filters {
+  font-size: small;
+}
+
+.card, .form-control, .btn {
+  border-radius: 0;
+}
+
+.list-group-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.list-group-item:last-child {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.product-btn {
+  font-size: smaller;
+}
+
+.fa-heart {
+  color: palevioletred;
+  cursor: pointer;
+}
+
+.guest-form-card h2 {
+  text-transform: uppercase;
+  font-size: medium;
+}
+
+.guest-form-card label {
+  font-size: small;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  cursor: not-allowed;
+}
+
+/* input type number field box formatting*/
+input[type=number]{
+  width: 150px;
+}
+
+/* this is for the background and mask in zipcode */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.itemCard {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+

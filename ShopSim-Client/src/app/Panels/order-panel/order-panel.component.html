@@ -1,0 +1,11 @@
+<div  *ngIf="order">
+    <div class="card pointer" (click)='viewOrder()'>
+        <div class="container">
+        <h4>Order id: {{order.id}}</h4>
+        <img src="{{store?.logoUrl}}">
+        <div><span>Store: </span>{{store?.name}}</div>
+        <div>Order Date: {{order.orderDate}}</div>
+        <div>Delivery Date: {{order.deliveryDate}}</div>
+        </div>
+    </div> 
+</div>

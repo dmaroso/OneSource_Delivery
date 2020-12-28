@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="guest-form-card card border-dark shadow">
+            <div class="card-header border-dark text-center">
+                <h2>Checkout</h2>
+            </div>
+            <div class="card-body">
+                <form #orderForm="ngForm" (ngSubmit)="orderForm.valid && onOrderClick()">
+                    <!-- will call onSubmitClick() on form submission (only if it's valid) -->
+                    <div class="form-group">
+                        <label typefor="cardNumber" style="margin-right: 10px;">Enter Card:</label>
+                        <input type="text" name="cardNumber" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx"
+                            [(ngModel)]="cardNumber" (onkeyup)="formatCard()" required>
+                        <span class="invalid-feedback">Card number can't be blank.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cvc" style="margin-right: 18px;">CVC:</label>
+                        <input type="password" name="cvc" class="form-control" placeholder="xxx" required>
+                        <span class="invalid-feedback">CVC can't be blank.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="ml-1" for="targetDate" style="margin-right: 10px;">Purchase Date:</label>
+                        <input type="date" name="targetDate" class="form-control" [(ngModel)]="targetDate" required>
+                        <span class="invalid-feedback">You must select an order date.</span>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" [disabled]="!orderForm.valid">Complete Order</button>
+                    <br>
+                    <p>{{message}}</p>
+                    <!-- <div [innerHTML]="message"></div> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container col-md-8 col-md-offset-3" style="overflow: auto">
+    <form #orderForm="ngForm" novalidate>
+        
+        <input type = "text" name = "cardNumber" placeholder="xxxx-xxxx-xxxx-xxxx" [(ngModel)] = "cardNumber" (onkeyup) = "formatCard()" required><br>
+        <input type="password" name="cvc" placeholder="xxx" required><br>
+        <input type="date" name="targetDate" [(ngModel)] = "targetDate" required><br>
+        <button [disabled]="!orderForm.valid" (click)="onOrderClick()">Complete Order</button>
+        <p>{{message}}</p>
+    </form>
+</div> -->

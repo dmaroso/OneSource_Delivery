@@ -1,0 +1,29 @@
+<div class="text-center">
+  <div class="card border-dark shadow filters" style="height: auto; width: auto;">
+    <div class="card-header border-dark">
+      <strong>Store Info</strong>
+    </div>
+    <div *ngIf="store">
+      <!-- <div class="card-body"> -->
+        <img src="{{store.logoUrl}}" class="center-block" style="width: 200px; margin-top: 10px; margin-bottom: 10px;">
+        <div class="container">
+          <h6>{{store.name}}</h6>
+          <div>Address: <p>{{store.address}}, {{store.zipcode}}</p>
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
+
+<!--original code-->
+<!-- <h2>Store Info</h2>
+<div *ngIf="store">
+  <div class="card">
+    <img src="{{store.logoUrl}}">
+    <div class="container">
+      <h4>{{store.name}}</h4>
+      <div>Address: <span>{{store.address}}, {{store.zipcode}}</span></div>
+    </div>
+  </div>
+</div> -->

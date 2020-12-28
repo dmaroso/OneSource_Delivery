@@ -1,0 +1,60 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm" style="margin-bottom: 0 !important;">
+  <h5 class="my-0 mr-md-auto font-weight-normal">
+    <app-header></app-header>
+  </h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <!-- <a class="p-2 text-dark" [routerLink]="['/selectStore']">Stores</a>
+    <a class="p-2 text-dark" [routerLink]="['/shop']">Shop</a>
+    <a class="p-2 text-dark" [routerLink]="['/recipes']">Recipes</a>  
+    <a class="p-2 text-dark" [routerLink]="['/about']">About</a>       -->
+
+    <div *ngIf="loginService.user; else not_logged_in"> 
+      Hello! <a style="margin-right: 10px;" [routerLink]="['/orders']">{{loginService.user.firstName}} {{loginService.user.lastName}}</a>
+      <!--if the user is logged in-->
+      <a class="p-2 text-dark" [routerLink]="['/selectStore']">Stores</a>
+      <a class="p-2 text-dark" style="margin-right: 10px;" [routerLink]="['/cart']">Cart</a>
+      <button class="btn btn-outline-secondary" (click)="logOut()">Log Out</button>
+    </div>
+
+    <ng-template #not_logged_in>
+      <!-- else is the user hasn't logged in -->
+      <a class="btn btn-primary" style="margin-right: 10px;" [routerLink]="['/createAccount']">Sign up</a>
+      <button class="btn btn-outline-secondary" [routerLink]="'/login'">Login</button>
+    </ng-template>
+
+  </nav>
+</div>
+
+<!-- original code -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <a class="navbar-brand" routerLink="/home">Store Sim</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Stores<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Recipes<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+
+  <div *ngIf="loginService.user; else not_logged_in">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a [routerLink]="['/orders']" class="nav-link">{{loginService.user.firstName}} {{loginService.user.lastName}}</a></li>
+      <li class="nav-item"><button class="btn btn-primary" [routerLink]="'/cart'" >Cart</button></li>
+      <li class="nav-item"><button class="btn btn-primary" (click)="logOut()">Logout</button></li>
+    </ul>
+  
+  </div>
+  <ng-template #not_logged_in>
+      <button class="btn btn-primary" [routerLink]="'/login'" >Login</button>
+   
+  </ng-template>
+
+  </div>
+</nav> -->

@@ -1,0 +1,74 @@
+<div class="row">
+  <!--display the filters component-->
+  <div class="col-md-2"> <!--how can I make these cards wider?-->
+    <app-filters></app-filters>
+  </div>
+
+  <!--display the items list-->
+  <div class="col-md-8">
+    <app-product-list></app-product-list>
+  </div>
+
+  <!--display the store info component-->
+  <div class="col-md-2">
+    <app-store-info></app-store-info>
+  </div>
+</div>
+
+<!--original code-->
+<!-- <h2>Store Info</h2>
+<div *ngIf="store">
+  <div class="card">
+    <img src="{{store.logoUrl}}">
+    <div class="container">
+      <h4>{{store.name}}</h4>
+      <div>Address: <span>{{store.address}}, {{store.zipcode}}</span></div>
+    </div>
+  </div>
+</div>
+
+<br />
+<h2>Store Items</h2>
+<form #filterForm novalidate>
+  <div class="filters">
+    <input name="filterTerm" #filterTerm type="text" placeholder="Keyword Search" [(ngModel)]="filterTerms" required />
+    <div>
+      <button (click)="onSearchClick()">Search</button>
+    </div>
+</form>
+  <div>
+    <label for="brand">Filter by Brand</label>
+    <select id="brand" name="brand" [(ngModel)]="filterBrand">
+      <option value="none" selected disabled hidden>Brand</option>
+      <option value="Kroger">Kroger</option>
+    </select>
+    <label for="limit">Result Limit</label>
+    <select id="limit" name="limit" [(ngModel)]="filterLimit">
+      <option value="1" selected>1</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="25">25</option>
+    </select> 
+  </div>
+</form>
+
+<div>
+  <label for="brand">Filter by Brand</label>
+  <select id="brand" name="brand" [(ngModel)]="filterBrand">
+    <option value="none" selected disabled hidden>Brand</option>
+    <option value="Kroger">Kroger</option>
+  </select>
+
+  <label for="limit">Result Limit</label>
+  <select id="limit" name="limit" [(ngModel)]="filterLimit">
+    <option value="5" selected>5</option>
+    <option value="10">10</option>
+    <option value="25">25</option>
+  </select>
+</div>
+
+<div class="itemPanel" *ngIf="items">
+  <div class="itemWrapper" *ngFor="let item of items">
+    <app-item-panel [item]=item></app-item-panel>
+  </div>
+</div> -->

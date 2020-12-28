@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+      <div class="guest-form-card card border-dark shadow">
+          <!-- not sure why class is named guest-form-card (bothers me) -->
+
+          <div class="card-header border-dark text-center">
+              <h2>Login Here</h2>
+          </div>
+
+          <div class="card-body">
+              <form #loginForm="ngForm" (ngSubmit)="loginForm.valid && onSubmitClick()">
+                  <!-- will call onSubmitClick() on form submission (only if it's valid) -->
+                  <div class="form-group">
+                      <label for="email" style="margin-right: 10px;">User Email:</label>
+                      <input name="email" #email="ngModel" type="text" placeholder="User Email" class="form-control"
+                          [(ngModel)]="userEmail" required />
+                      <span class="invalid-feedback">User Email can't be blank.</span>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="password" style="margin-right: 18px;">Password:</label>
+                      <input name="password" #password="ngModel" type="password" placeholder="Password" class="form-control"
+                          [(ngModel)]="userPassword" required />
+                      <span class="invalid-feedback">Password can't be blank.</span>
+                  </div>
+
+                  <div class="form-group">
+                      <input type="checkbox" id="remember" name="remember" #remember="ngModel"
+                          [(ngModel)]="model.remember"> <!--add remember me functionality-->
+                      <label class="ml-1" for="remember">Remember Me</label>
+                  </div>
+
+                  <button class="btn btn-primary btn-block" [disabled]="loginForm.invalid">Login</button>
+                  <br>
+                  <div [innerHTML]="message"></div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- <p>for dev purposes, replace with nav bar</p>
+<button [routerLink]="'/createAccount'" class="btn btn-primary">Create Account</button>
+<button [routerLink]="'/store'" class="btn btn-primary">Enter Store</button>
+<button [routerLink]="'/createItemList'" class="btn btn-primary">Create Item List</button> -->
+
+<!--original code-->
+<!-- <div>
+  <form #loginForm="ngForm" novalidate>
+      <div class = "form-group">
+        <label for="email">Email:</label>
+          <input name="email" #email type="text" placeholder="User Email" class="form-control" [(ngModel)]="userEmail" required/>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+          <input name = "password" #password type="password" class="form-control" placeholder="Password" [(ngModel)]="userPassword" required/>
+      </div>
+      <div>
+          <button [disabled]="!loginForm.valid" class="btn btn-primary mr-1" (click)="onSubmitClick()">Log In</button> <button [routerLink]="'/createAccount'" class="btn btn-primary">Sign Upjh</button>
+      </div>
+      <br/>
+      <div [innerHTML]="message"></div>
+      
+  </form>
+</div>
+    <button [routerLink]="'/createAccount'" class="btn btn-primary">Create Account</button>
+    <br/>
+    <button [routerLink]="'/store'" class="btn btn-primary">Enter Store</button>
+    <br/>
+    <button [routerLink]="'/createItemList'" class="btn btn-primary">Create Item List</button> -->
+    

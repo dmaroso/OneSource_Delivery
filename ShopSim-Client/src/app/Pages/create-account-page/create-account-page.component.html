@@ -1,0 +1,97 @@
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="guest-form-card card border-dark shadow">
+
+            <div class="card-header border-dark text-center">
+                <h2>Register Here</h2>
+            </div>
+            
+            <!-- why does the spacing look weird lol? i bet it's the spans -->
+            <div class="card-body">
+                <form #createAccountForm="ngForm" (ngSubmit)="createAccountForm.valid && onSubmitClick()">
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <input name="firstName" #firstName type="text" placeholder="First Name" class="form-control"
+                            [(ngModel)]="createFirstName" required />
+                        <span class="invalid-feedback">First Name can't be blank.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input name="lastName" #lastName type="text" placeholder="Last Name" class="form-control"
+                            [(ngModel)]="createLastName" required />
+                        <span class="invalid-feedback">Last Name can't be blank.</span>
+                    </div>
+
+                    <div>
+                        <label for="userEmail">Email:</label>
+                        <input name="userEmail" #userEmail type="text" placeholder="Email" class="form-control"
+                            [(ngModel)]="createUserEmail" required />
+                        <span class="invalid-feedback">Email Name can't be blank.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input name="password" #password type="password" placeholder="Password" class="form-control"
+                            [(ngModel)]="createPassword" required />
+                        <span class="invalid-feedback">Password Name can't be blank.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="streetAddress">Street Address:</label>
+                        <input name="streetAddress" #streetAddress type="text" placeholder="Street Address"
+                            class="form-control" [(ngModel)]="createStreetAddress" required />
+                        <span class="invalid-feedback">Password Name can't be blank.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="zipcode">Zipcode:</label>
+                        <input name="zipcode" #zipcode type="text" placeholder="Zipcode" class="form-control"
+                            [(ngModel)]="createZipcode" required />
+                        <span class="invalid-feedback">Password Name can't be blank.</span>
+                    </div>
+
+                    <button [disabled]="!createAccountForm.valid" class="btn btn-primary"
+                        (click)="onSubmitClick()">Register</button> Already Registered? <a routerLink="/login">Login</a>
+                    <br />
+                    <div [innerHTML]="message"></div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- original code -->
+<!-- <div class="container col-md-8 col-md-offset-3" style="overflow: auto">
+    <h1>Create Account</h1>
+    <form #createAccountForm="ngForm" novalidate>
+        <div class="form-group">
+            <label for="firstName">First Name:</label> 
+            <input name="firstName" #firstName type="text" placeholder="First Name" class="form-control" [(ngModel)]="createFirstName" required/>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label> 
+            <input name="lastName" #lastName type="text" placeholder="Last Name" class="form-control" [(ngModel)]="createLastName" required/>
+        </div>
+        <div class="form-group">
+        <label for="userEmail">Email:</label> 
+        <input name="userEmail" #userEmail type="text" placeholder="Email" class="form-control" [(ngModel)]="createUserEmail" required/>
+       </div>
+       <div class="form-group">
+           <label for="password">Password:</label>
+           <input name="password" #password type="text" placeholder="Password" class="form-control" [(ngModel)]="createPassword" required/>
+       </div>
+        <div class="form-group">
+            <label for="streetAddress">Street Address:</label> 
+            <input name="streetAddress" #streetAddress type="text" placeholder="Street Address" class="form-control" [(ngModel)]="createStreetAddress" required/>
+        </div>
+        <div class="form-group">
+            <label for="zipcode">Zipcode:</label> 
+            <input name="zipcode" #zipcode type="text" placeholder="Zipcode" class="form-control" [(ngModel)]="createZipcode" required/>
+        </div>
+        <button [disabled]="!createAccountForm.valid" class="btn btn-primary" (click)="onSubmitClick()">Register</button> Already Registered? <a routerLink = "/login">Login</a>
+        <br/>
+        <div [innerHTML] = "message"></div>
+    </form>
+   </div> -->

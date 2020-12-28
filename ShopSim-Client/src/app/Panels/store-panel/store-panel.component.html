@@ -1,0 +1,9 @@
+<div class="text-center" *ngIf="store" >
+    <div class="card border-dark shadow pointer" style="height: auto; width: auto; margin-right: 10px;" (click)="openStore()">
+        <img src="{{store.logoUrl}}" class="center-block" style="width: auto; margin-top: 10px;">
+        <div class="container">
+            <h4>{{store.name}}</h4>
+            <div>Address: <span>{{store.address}}, {{store.zipcode}}</span></div>
+        </div>
+    </div>
+</div>

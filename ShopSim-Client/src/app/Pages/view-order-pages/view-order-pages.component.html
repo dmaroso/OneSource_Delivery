@@ -1,0 +1,14 @@
+<h2>Order: {{order?.id}} ordered on {{order?.orderDate}} from {{store?.name}}</h2>
+<h3>Delivered on {{order?.deliveryDate}}
+<hr>
+<div>
+<div class = "orderWrapper" *ngFor="let itemList1 of order?.items">
+    <app-item-list-panel [itemList] = itemList1 [store] = store [viewOrderPage] = this></app-item-list-panel>
+</div>
+</div>
+
+<h5>Total: ${{total}}</h5>
+<h5>Payment Method: {{order?.payMethod}}</h5>
+
+
+

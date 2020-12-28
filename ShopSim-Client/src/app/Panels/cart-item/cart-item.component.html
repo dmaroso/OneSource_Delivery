@@ -1,0 +1,30 @@
+<div *ngIf="show">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <div class="card shadow p-3 mb-5 bg-white rounded" >
+                    <div class="card-horizontal">
+                        <div class="imageSquareWrapper">
+                            <img class="" src="{{item.url}}" alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">{{item.description}}</h4>
+                            <p class="card-text">Price: ${{item.price}} Quantity: {{item.quantity}}</p>
+                            <button class="btn bg-primary" (click) = "removeItem()">Remove Item</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
+
+
+    <!-- <div class="card">
+        <img src="{{item.url}}" alt="item" >
+        <div class="container">
+        <h4>{{item.description}}</h4>
+        <div><span>price: </span>${{item.price}} ({{item.quantity}})</div>
+        <button class="btn bg-primary" (click) = "removeItem()">Remove Item</button>
+        </div>
+    </div>  -->

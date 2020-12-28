@@ -1,0 +1,30 @@
+<div class="card border-dark shadow filters">
+    <div class="card-header border-dark">
+        <strong>Filter by Brand</strong>
+    </div>
+
+    <div class="card-body">
+        <form>
+            <div class="form-group" *ngIf="StoreService.currentStore?.name != 'Walmart'">
+                <label for="brand" style="margin-right: 10px;">Brand:</label>
+                <select id="brand" name="brand" class="form-control small" [(ngModel)]="filterBrand">
+                    <option value="none" selected disabled hidden></option>
+                    <option value="Kroger">Kroger</option>
+                    <option >Great Value</option> <!-- these are dummy brands we can remove them if you want -->
+                    <option >Hill Country Fare</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="limit" style="margin-right: 10px;">Result Limit:</label>
+                <select id="limit" name="limit" class="form-control" [(ngModel)]="filterLimit">
+                    <option value="5" selected disabled hidden></option> <!--made the selection hidden by default, but it should still be 5-->
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                </select>
+            </div>
+            <button class="btn btn-primary btn-block btn-sm" (click)="filter()">Apply</button>
+        </form>
+    </div>
+</div>

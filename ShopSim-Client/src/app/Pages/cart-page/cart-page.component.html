@@ -1,0 +1,8 @@
+<h3>Current Cart: </h3>
+<div class="itemPanel" *ngIf="items; else elseBlock">
+    <div class = "itemWrapper" *ngFor="let item of items">
+        <app-cart-item [item] = item [cartPage] = this></app-cart-item>
+    </div>
+    <span style="margin-right: 10px;">Total: ${{totalString}}</span><button class="btn bg-primary" [routerLink]="'/submitOrder'">Finalize Order</button>
+</div>
+<ng-template #elseBlock>Your Cart is Empty</ng-template>
